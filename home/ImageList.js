@@ -1,17 +1,23 @@
-import Component from '../Component';
+import Component from '../Component.js';
+import ImageItem from './ImageItem.js';
 
-class ImageItem extends Component{
-    renderHtml(){
-        const pic = this.props.pic;
-
+class ImageList extends Component {
+    renderHTML(){
         return `
-            <div class="image">
-                <h2>${pic.title}</h2>
-                <img src="${pic.url}" alt="${pic.description}" title="${pic.description}">
-                <p>Total Horns: <span id="horn-count">${pic.horns}</span></p>
-            </div>
+        <section class="images"></section>
         `;
+    }
+    
+    onRender(domStuff){
+        const images = this.props.images;
+
+        images.forEach(image => {
+            const props = { image: image };
+            const imageItem = new ImageItem(props);
+            const imageItemDom = imageItem.renderDOM();
+            domStuff.appendChild(imageItemDom);
+        });
     }
 }
 
-export default ImageItem;
+export default ImageList;

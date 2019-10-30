@@ -1,4 +1,4 @@
-import htmlToDOM from './util/html-to-DOM.js';
+import htmlToDOM from './src/html-to-dom.js';
 
 class Component {
     constructor(props) {
@@ -6,7 +6,7 @@ class Component {
         this.state = {};
     }
 
-    onRender( /*dom*/ ) {
+    onRender(/*dom*/) {
         // no-op
     }
 
