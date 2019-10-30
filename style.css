@@ -1,0 +1,126 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-direction: space-between;
+    height: 100vh;
+    margin-bottom: 60px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+main {
+    margin-top: 60px;
+    flex: 1 0 auto;
+}
+
+header {
+    position: fixed;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    background: #05668D;
+    text-shadow: 0 0 10px #EBF2FA;
+    height: 60px;
+    border-bottom: 2px solid #1C0F13;
+    font-family: 'Lobster';
+    color: #1C0F13;
+}
+
+.images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.image {
+    margin: 20px;
+    background: #ebf2fa;
+    width: 26vw;
+    height: 40vh;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    box-shadow: 0 0 5px #427AA1;
+}
+
+i {
+    padding: 0 15px;
+}
+
+.choices {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px;
+}
+
+.choice {
+    font-size: 15px;
+    width: 20vw;
+    margin-left: 15px;
+}
+
+label {
+    display: flex;
+    font-size: 20px;
+    align-items: center;
+    margin: 0 30px;
+}
+
+footer {
+    position: sticky;
+    height: 40px;
+    background: #05668D;
+    color: #1c0f13;
+    text-shadow: 0 0 10px #EBF2FA;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-top: 1px solid #1C0F13;
+    bottom: 0;
+}
+
+.foot {
+    margin-right: 30px;
+    font-size: 20px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #6E7E85;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
+img {
+    border: 1px solid #1C0F13;
+    border-radius: 6px;
+    max-height: 60%;
+    max-width: 90%;
+}
+
+h2 {
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-size: 22px;
+}
+
+p {
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.radButts {
+    display: flex;
+}
+
+input {
+    margin: 0 10px;
+}
