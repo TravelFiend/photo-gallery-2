@@ -8,14 +8,14 @@ class ImageList extends Component {
         `;
     }
     
-    onRender(domStuff){
+    onRender(dom){
         const images = this.props.images;
 
         images.forEach(image => {
             const props = { image: image };
             const imageItem = new ImageItem(props);
             const imageItemDom = imageItem.renderDOM();
-            domStuff.appendChild(imageItemDom);
+            dom.appendChild(imageItemDom);
         });
     }
 }

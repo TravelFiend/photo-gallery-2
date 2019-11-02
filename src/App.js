@@ -1,28 +1,33 @@
-// import FilterImages from './FilterImages.js';
 import Component from '../Component.js';
 import images from '../data/images.js';
 import ImageList from '../home/ImageList.js';
-console.log('hi');
+import Header from '../home/Header.js';
+import FilterImages from '../home/FilterImages.js';
 
 class App extends Component{
-    onRender(dom){
+    onRender(el){
         const props = { images: images };
-    
 
+        const header = new Header();
+        el.prepend(header.renderDOM());
+
+        const main = el.querySelector('main');
+        const sorting = new FilterImages();
+        const sortingDom = sorting.renderDOM();
+        main.prepend(sortingDom);
+
+        const hr = document.createElement('hr');
+        el.appendChild(hr);
+    
         const imageList = new ImageList(props);
         const imageListDom = imageList.renderDOM();
-        // const p = document.createElement('p');
-        // p.textContent = 'hi again';
-
-        // const imageSection = document.querySelector('.images');
-        dom.appendChild(imageListDom);
+        el.appendChild(imageListDom);
     }
 
     renderHTML() {
         return `
             <div>
                 <main>
-                    <section class="options-section"></section>
                 </main>
             </div>
         `;

@@ -10,7 +10,6 @@ body {
     flex-direction: space-between;
     height: 100vh;
     margin-bottom: 60px;
-    font-family: 'Quicksand', sans-serif;
 }
 
 main {
@@ -29,12 +28,14 @@ header {
     border-bottom: 2px solid #1C0F13;
     font-family: 'Lobster';
     color: #1C0F13;
+    top: 0;
 }
 
 .images {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .image {
@@ -56,8 +57,9 @@ i {
 
 .choices {
     display: flex;
+    font-family: 'Quicksand', sans-serif;
     justify-content: space-around;
-    margin: 30px;
+    margin: 92px 30px 30px 30px;
 }
 
 .choice {
