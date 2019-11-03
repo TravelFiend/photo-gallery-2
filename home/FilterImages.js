@@ -1,9 +1,24 @@
 import Component from '../Component.js';
+import images from '../data/images.js';
 
 class FilterImages extends Component{
-    // onRender(el){
+    onRender(el){
+        let filterList = [];
+        images.forEach(image => {
+            filterList.push(image.keyword);
+        });
+    
+        let newList = filterList.filter((item, index) => filterList.indexOf(item) === index);
+    
+        newList.forEach(name => {
+            const myDropdown = el.querySelector('select');
+            const myOptions = document.createElement('option');
+            myOptions.value = name;
+            myOptions.textContent = name;
+            myDropdown.appendChild(myOptions);
+        });
+    }
 
-    // }
 
     renderHTML(){
         return /*html*/`

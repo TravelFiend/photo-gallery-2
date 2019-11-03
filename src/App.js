@@ -2,6 +2,7 @@ import Component from '../Component.js';
 import images from '../data/images.js';
 import ImageList from '../home/ImageList.js';
 import Header from '../home/Header.js';
+import Footer from '../home/Footer.js';
 import FilterImages from '../home/FilterImages.js';
 
 class App extends Component{
@@ -22,6 +23,9 @@ class App extends Component{
         const imageList = new ImageList(props);
         const imageListDom = imageList.renderDOM();
         el.appendChild(imageListDom);
+
+        const footerSection = new Footer();
+        el.appendChild(footerSection.renderDOM());
     }
 
     renderHTML() {
