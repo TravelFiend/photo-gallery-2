@@ -12,20 +12,30 @@ class App extends Component{
         const header = new Header();
         el.prepend(header.renderDOM());
 
-        const main = el.querySelector('main');
-        const sorting = new FilterImages();
-        const sortingDom = sorting.renderDOM();
-        main.prepend(sortingDom);
-
         const hr = document.createElement('hr');
         el.appendChild(hr);
     
         const imageList = new ImageList(props);
-        const imageListDom = imageList.renderDOM();
-        el.appendChild(imageListDom);
+        el.appendChild(imageList.renderDOM());
 
         const footerSection = new Footer();
         el.appendChild(footerSection.renderDOM());
+
+        const filterImages = new FilterImages({
+            images: images,
+            onFilter: (selection) => {
+                let filteredImages;
+                if (!selection || selection === 'all') {
+                    filteredImages = images;
+                } else {
+                    filteredImages = images.filter(image => image.keyword === selection);
+                }
+                const updateProps = { images: filteredImages };
+                imageList.update(updateProps);
+            }
+        });
+        const main = el.querySelector('main');
+        main.appendChild(filterImages.renderDOM());
     }
 
     renderHTML() {

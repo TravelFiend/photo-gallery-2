@@ -3,7 +3,6 @@ import Component from '../Component.js';
 class ImageItem extends Component {
     renderHTML() {
         const pic = this.props.image;
-        console.log(pic);
         return `
             <div class="image">
                 <h2>${pic.title}</h2>

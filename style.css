@@ -76,7 +76,7 @@ label {
 }
 
 footer {
-    position: sticky;
+    position: fixed;
     height: 40px;
     background: #05668D;
     color: #1c0f13;
